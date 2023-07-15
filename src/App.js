@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { CampoTexto } from "./componentes/CampoTexto/CampoTexto";
+import { Card } from "./componentes/Card/Card";
+import { Estilos } from "./componentes/EstilosGlobais/Estilos";
+import { ProvedorTema } from "./componentes/ProvedorTema/ProvedorTema";
+import { Tipografia } from "./componentes/Tipografia/Tipografia";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ProvedorTema>
+      <Estilos />
+      <Container>
+        <Row justify="center">
+          <Col lg={6}> 
+            <Card>
+              <Tipografia variante="h1" componente="h1">
+                Freelando
+              </Tipografia>
+              <Tipografia variante="body" componente="body">
+                Crie seu perfil gratuitamente para começar a trabalhar com os melhores freelancers. Em seguda, você poderá dar mais detalhes sobre suas demandas e sobre sua forma de trabalho.
+              </Tipografia>
+              <CampoTexto titulo="Nome Completo" />
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+    </ProvedorTema>
   );
 }
 
