@@ -1,14 +1,13 @@
-import { RouterProvider } from 'react-router-dom'
-import { router } from "./router/router";
-import { ProvedorTema } from './componentes/ProvedorTema/ProvedorTema';
-import { Estilos } from './componentes/EstilosGlobais/Estilos';
+import { RouterProvider } from "react-router-dom"
+import { Estilos } from "./componentes/EstilosGlobais/Estilos"
+import { ProvedorTema } from "./componentes/ProvedorTema/ProvedorTema"
+import { router } from "./router/router"
 
-export default function App() {
-  return (
-    <ProvedorTema>
-      <Estilos/>
-      <RouterProvider router={router} />
-    </ProvedorTema>
-  )
-}
+function App () {
+  return (<ProvedorTema>
+    <Estilos />
+    <RouterProvider router={router} />
+  </ProvedorTema>)
+} 
 
+export default App

@@ -1,16 +1,16 @@
 import { Col, Container, Row } from "react-grid-system"
+import { Outlet } from "react-router-dom"
 import { Cabecalho } from "../componentes/Cabecalho/Cabecalho"
 import { FreelandoLogo } from "../componentes/Icones/FreelandoLogo"
-import { Link } from "../componentes/Link/Link";
-import { Rodape } from "../componentes/Rodape/Rodape";
-import { Tipografia } from "../componentes/Tipografia/Tipografia";
-import { ListaInline } from "../componentes/Lista/ListaInline";
-import { ItemListaInline } from "../componentes/Lista/ItemListaInline";
-import { IconeWhatsApp } from "../componentes/Icones/IconeWhatsApp";
-import { IconeTwitch } from "../componentes/Icones/IconeTwitch";
-import { IconeInstagram } from "../componentes/Icones/IconeInstagram";
-import { IconeTwitter } from "../componentes/Icones/IconeTwitter";
-import { Outlet } from 'react-router-dom'
+import { IconeInstagram } from "../componentes/Icones/IconeInstagram"
+import { IconeTwitch } from "../componentes/Icones/IconeTwitch"
+import { IconeTwitter } from "../componentes/Icones/IconeTwitter"
+import { IconeWhatsApp } from "../componentes/Icones/IconeWhatsApp"
+import { Link } from "../componentes/Link/Link"
+import { ItemListaInline } from "../componentes/Lista/ItemListaInline"
+import { ListaInline } from "../componentes/Lista/ListaInline"
+import { Rodape } from "../componentes/Rodape/Rodape"
+import { Tipografia } from "../componentes/Tipografia/Tipografia"
 
 const LayoutBase = () => {
     return (
@@ -28,8 +28,7 @@ const LayoutBase = () => {
                 </Container>
             </Cabecalho>
             <Container>
-
-            <Outlet />
+                <Outlet />
             </Container>
             <Rodape>
                 <Container>

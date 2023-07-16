@@ -7,10 +7,9 @@ const LabelEstilizada = styled.label`
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
-
 `
 
-const InputEstilizada = styled.input`
+const InputEstilizado = styled.input`
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -19,18 +18,21 @@ const InputEstilizada = styled.input`
     background: ${props => props.theme.cores.branco};
     border: 1px solid;
     border-color: ${props => props.theme.cores.neutras.a};
-    border-radius: ${props => props.theme.espacamentos.s};;
+    border-radius: ${props => props.theme.espacamentos.s};
+    padding: 0 ${props => props.theme.espacamentos.s};
     height: 40px;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
 `
 
-export const CampoTexto = ({ titulo }) => {
-    return (
-        <LabelEstilizada>
-            {titulo}
-            <InputEstilizada />
-        </LabelEstilizada>
-    )
+export const CampoTexto = ({ titulo, valor, onChange, tipo = 'text' }) => {
+    return (<LabelEstilizada>
+        {titulo}
+        <InputEstilizado 
+            value={valor} 
+            onChange={ evento => onChange(evento.target.value) }
+            type={tipo}
+        />
+    </LabelEstilizada>)
 }

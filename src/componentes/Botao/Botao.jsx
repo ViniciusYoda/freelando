@@ -19,7 +19,6 @@ const BotaoPrimarioEstilizado = styled.button`
         outline-color: ${props => props.theme.cores.dark.d};
     }
 `
-
 const BotaoSecundarioEstilizado = styled.button`
     background: transparent;
     color: ${props => props.theme.cores.primarias.b};
@@ -33,7 +32,7 @@ const BotaoSecundarioEstilizado = styled.button`
     text-align: center;
     cursor: pointer;
     &:hover {
-        background: ${props => props.theme.cores.dark.b};
+        border-color: ${props => props.theme.cores.dark.b};
         color: ${props => props.theme.cores.dark.b};
     }
     &:focus {
@@ -43,15 +42,11 @@ const BotaoSecundarioEstilizado = styled.button`
 
 export const Botao = ({ children, variante = 'primaria' }) => {
     if (variante === 'primaria') {
-        return (
-            <BotaoPrimarioEstilizado>
-                {children}
-            </BotaoPrimarioEstilizado>
-        )
-    }
-    return (
-        <BotaoSecundarioEstilizado>
+        return <BotaoPrimarioEstilizado>
             {children}
-        </BotaoSecundarioEstilizado>
-    )
+        </BotaoPrimarioEstilizado>
+    }
+    return <BotaoSecundarioEstilizado>
+        {children}
+    </BotaoSecundarioEstilizado>
 }

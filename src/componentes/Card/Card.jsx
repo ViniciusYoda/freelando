@@ -9,9 +9,7 @@ const DivEstilizada = styled.div`
 `
 
 export const Card = ({ children }) => {
-    return(
-        <DivEstilizada>
-            {children}
-        </DivEstilizada>
-    )
+    return (<DivEstilizada>
+        {children}
+    </DivEstilizada>)
 }
