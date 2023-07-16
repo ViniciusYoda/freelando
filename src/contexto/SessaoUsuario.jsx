@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { createContext, useContext } from 'react';
 
 const SessaoUsuarioContext = createContext({
@@ -11,11 +12,11 @@ export const useSessaoUsuarioContext = () => {
     return useContext(SessaoUsuarioContext)
 }
 
-export const SessaoUsuarioProvider = ({children}) => {
+export const SessaoUsuarioProvider = ({ children }) => {
     const value = {}
     return (
         <SessaoUsuarioContext.Provider value={value}>
-            {childeren}
+            {children}
         </SessaoUsuarioContext.Provider>  
     )
 }

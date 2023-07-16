@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 export const FreelandoLogo = ({width = 247, height = 56}) => {
     return (
         <svg width={width} height={height} viewBox="0 0 247 56" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { ThemeProvider } from '@emotion/react'
 
 const tema = {

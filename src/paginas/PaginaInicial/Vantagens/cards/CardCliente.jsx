@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styled from "@emotion/styled"
 import { Col } from "react-grid-system"
 import { Card } from "../../../../componentes/Card/Card"

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { createContext, useContext } from "react";
 
 const SessaoUsuarioContext = createContext({

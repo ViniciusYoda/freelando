@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styled from "@emotion/styled"
 import { useState } from "react"
 import { ItemListaSuspensaEstilizado } from "./ItemListaSuspensaEstilizado"
