@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import styled from "@emotion/styled"
 
 const LabelEstilizada = styled.label`

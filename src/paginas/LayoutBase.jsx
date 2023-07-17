@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Col, Container, Row } from "react-grid-system"
 import { Outlet } from "react-router-dom"
 import { Cabecalho } from "../componentes/Cabecalho/Cabecalho"

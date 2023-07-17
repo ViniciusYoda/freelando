@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import Radio from "./Radio";
 
 const GrupoRadio = ({ opcoes, valor, onChange }) => {

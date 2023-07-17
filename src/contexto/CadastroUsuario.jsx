@@ -1,7 +1,6 @@
-/* eslint-disable react/prop-types */
-import axios from 'axios';
 import { createContext, useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import http from '../http';
 
 const usuarioInicial = {
     perfil: '',
@@ -106,7 +105,7 @@ export const CadastroUsuarioProvider = ({ children }) => {
 
     const submeterUsuario = () => {
 
-        axios.post('http://localhost:8080/auth/register', usuario)
+        http.post('auth/register', usuario)
             .then(() => {
                 navegar('/cadastro/concluido')
             })

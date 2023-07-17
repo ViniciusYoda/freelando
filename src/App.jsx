@@ -6,7 +6,10 @@ import { router } from "./router/router"
 function App () {
   return (<ProvedorTema>
     <Estilos />
+    <SessaoUsuarioProvider>
+
     <RouterProvider router={router} />
+    </SessaoUsuarioProvider>
   </ProvedorTema>)
 } 
 

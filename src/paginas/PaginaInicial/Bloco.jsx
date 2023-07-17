@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import styled from "@emotion/styled"
 import { Row } from "react-grid-system"
 import { Tipografia } from "../../componentes/Tipografia/Tipografia"
