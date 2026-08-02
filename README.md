@@ -208,14 +208,7 @@ npm run preview
 - Dados em `localStorage` podem ser alterados pelo usuário e não devem ser considerados confiáveis por um backend.
 - Em produção, autorização, validação, propriedade dos projetos e aceite de propostas devem ser verificados no servidor.
 
-## Próximos passos recomendados
 
-- Criar ou conectar uma API para profissionais, projetos, propostas, favoritos e avaliações.
-- Configurar a URL da API por variável de ambiente.
-- Adicionar testes unitários, de integração e ponta a ponta.
-- Incluir validação de formulários e mensagens de erro vindas da API.
-- Adicionar paginação, ordenação e filtros avançados.
-- Configurar CI para executar typecheck, lint, testes e build.
 
 ## Licença
 
