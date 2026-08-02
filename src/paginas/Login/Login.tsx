@@ -1,7 +1,7 @@
 import styled from "@emotion/styled"
 import { useState } from "react"
 import { Col, Container, Row } from "react-grid-system"
-import { Link as RouterLink } from "react-router-dom"
+import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom"
 import { Botao } from "../../componentes/Botao/Botao"
 import { CampoTexto } from "../../componentes/CampoTexto/CampoTexto"
 import { Card } from "../../componentes/Card/Card"
@@ -19,17 +19,25 @@ const FormEstilizado = styled.form`
 const Login = () => {
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
+    const [erro, setErro] = useState('')
 
-    const { login } = useSessaoUsuarioContext()
+    const { login, carregando } = useSessaoUsuarioContext()
+    const navegar = useNavigate()
+    const location = useLocation()
 
     const tentarEfetuarLogin = async (evento) => {
         evento.preventDefault();
-        login(email, senha)
+        try {
+            await login(email, senha)
+            navegar((location.state as { de?: string } | null)?.de || '/dashboard')
+        } catch (falha) {
+            setErro((falha as Error).message)
+        }
     }
 
     return (<Container>
         <Row justify="center">
-            <Col xxx={6} xxl={6} xl={6} lg={6} md={8} sm={12} style={{ margin: '80px 0' }}>
+            <Col xxxl={6} xxl={6} xl={6} lg={6} md={8} sm={12} style={{ margin: '80px 0' }}>
                 <div style={{ textAlign: 'center' }}>
                     <Logo />
                 </div>
@@ -53,7 +61,7 @@ const Login = () => {
                             tipo="password"
                         />
                         <div style={{ textAlign: 'right' }}>
-                            <RouterLink to="">
+                            <RouterLink to="/recuperar-senha">
                                 <Tipografia componente="legenda" variante="legenda">
                                     Esqueceu sua senha?
                                 </Tipografia>
@@ -61,9 +69,11 @@ const Login = () => {
                         </div>
                         <div style={{ textAlign: 'center' }}>
                             <Botao>
-                                Login
+                                {carregando ? 'Entrando...' : 'Login'}
                             </Botao>
                         </div>
+                        {erro && <p role="alert">{erro}</p>}
+                        <p>Para testar sem API: demo@freelando.com / 123456</p>
                     </FormEstilizado>
                     <div style={{ textAlign: 'center' }}>
                         <Tipografia componente="legenda" variante="legenda">

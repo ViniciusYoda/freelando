@@ -40,13 +40,13 @@ const BotaoSecundarioEstilizado = styled.button`
     }
 `
 
-export const Botao = ({ children, variante = 'primaria' }) => {
+export const Botao = ({ children, variante = 'primaria', fluido = false }: { children: React.ReactNode; variante?: string; fluido?: boolean }) => {
     if (variante === 'primaria') {
-        return <BotaoPrimarioEstilizado>
+        return <BotaoPrimarioEstilizado style={{ width: fluido ? '100%' : undefined }}>
             {children}
         </BotaoPrimarioEstilizado>
     }
-    return <BotaoSecundarioEstilizado>
+    return <BotaoSecundarioEstilizado style={{ width: fluido ? '100%' : undefined }}>
         {children}
     </BotaoSecundarioEstilizado>
 }

@@ -12,19 +12,19 @@ const PaginaInicial = () => {
     <>
       <Banner />
       <Container>
-        <Bloco cards={cardsClientes} titulo="Vantagens para contratantes">
+        <Bloco titulo="Vantagens para contratantes">
           {cardsClientes.map(card => <CardCliente
             key={card.texto}
             icone={card.icone}
             texto={card.texto} />)}
         </Bloco>
-        <Bloco cards={cardsFreelas} titulo="Vantagens para freelas">
+        <Bloco titulo="Vantagens para freelas">
           {cardsFreelas.map(card => <CardFreela
             key={card.texto}
             icone={card.icone}
             texto={card.texto} />)}
         </Bloco>
-        <Bloco cards={cardsFreelas} titulo="Quais habilidades você encontra por aqui?">
+        <Bloco titulo="Quais habilidades você encontra por aqui?">
           <Col sm={12}>
             {habilidades.map(habilidade =>
               <Chip key={habilidade}>{habilidade}</Chip>)}

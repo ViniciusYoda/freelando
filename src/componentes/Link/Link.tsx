@@ -29,11 +29,11 @@ export const Link = ({ children, variante = 'primario', onClick = null }) => {
         }
     }
     if (variante === 'primario') {
-        return <LinkPrimario onClick={lidaComOClick} variante={variante}>
+        return <LinkPrimario onClick={lidaComOClick}>
             {children}
         </LinkPrimario>
     }
-    return <LinkSecundario onClick={lidaComOClick} variante={variante}>
+    return <LinkSecundario onClick={lidaComOClick}>
         {children}
     </LinkSecundario>
 }

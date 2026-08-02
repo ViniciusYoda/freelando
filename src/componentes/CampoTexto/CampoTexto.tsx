@@ -26,7 +26,14 @@ const InputEstilizado = styled.input`
     line-height: 17px;
 `
 
-export const CampoTexto = ({ titulo, valor, onChange, tipo = 'text' }) => {
+interface CampoTextoProps {
+    titulo: string
+    valor?: string
+    onChange?: (valor: string) => void
+    tipo?: React.HTMLInputTypeAttribute
+}
+
+export const CampoTexto = ({ titulo, valor = '', onChange = () => undefined, tipo = 'text' }: CampoTextoProps) => {
     return (<LabelEstilizada>
         {titulo}
         <InputEstilizado 

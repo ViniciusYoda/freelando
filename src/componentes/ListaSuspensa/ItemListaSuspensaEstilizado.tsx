@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const ItemListaSuspensaEstilizado = styled.li`
+export const ItemListaSuspensaEstilizado = styled.li<{ focoAtivo: boolean }>`
     padding: ${props => props.theme.espacamentos.xs} 0;
     text-align: center;
     border-bottom: 1px solid ${props => props.theme.cores.neutras.c};

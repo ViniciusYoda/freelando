@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 
-const LabelEstilizada = styled.label`
+const LabelEstilizada = styled.label<{ checked: boolean }>`
     display: flex;
     align-items: center;
     font-size: 16px;
@@ -42,7 +42,7 @@ const InputEscondido = styled.input`
 
 const Radio = ({ valor, label, checked, onClick }) => (
     <>
-        <InputEscondido type="radio" valor={valor} checked={checked} onChange={onClick} id={`radio-customizado-${valor}`}/>
+        <InputEscondido type="radio" value={valor} checked={checked} onChange={onClick} id={`radio-customizado-${valor}`}/>
         <LabelEstilizada htmlFor={`radio-customizado-${valor}`} checked={checked}>
             {label}
         </LabelEstilizada>

@@ -13,7 +13,7 @@ const usuarioInicial = {
     senhaConfirmada: ''
 }
 
-export const CadastroUsuarioContext = createContext({
+export const CadastroUsuarioContext = createContext<any>({
     usuario: usuarioInicial,
     erros: {},
     setPerfil: () => null,

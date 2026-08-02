@@ -1,18 +1,19 @@
 import { Col, Container, Row } from "react-grid-system"
-import { Outlet } from "react-router-dom"
+import { Link as RouterLink, Outlet } from "react-router-dom"
 import { Cabecalho } from "../componentes/Cabecalho/Cabecalho"
 import { FreelandoLogo } from "../componentes/Icones/FreelandoLogo"
 import { IconeInstagram } from "../componentes/Icones/IconeInstagram"
 import { IconeTwitch } from "../componentes/Icones/IconeTwitch"
 import { IconeTwitter } from "../componentes/Icones/IconeTwitter"
 import { IconeWhatsApp } from "../componentes/Icones/IconeWhatsApp"
-import { Link } from "../componentes/Link/Link"
 import { ItemListaInline } from "../componentes/Lista/ItemListaInline"
 import { ListaInline } from "../componentes/Lista/ListaInline"
 import { Rodape } from "../componentes/Rodape/Rodape"
 import { Tipografia } from "../componentes/Tipografia/Tipografia"
+import { useSessaoUsuarioContext } from "../contexto/SessaoUsuario"
 
-const LayoutBase = ({children}) => {
+const LayoutBase = ({children}: { children?: React.ReactNode }) => {
+    const { usuarioEstaLogado, logout } = useSessaoUsuarioContext()
     return (
         <>
             <Cabecalho>
@@ -21,8 +22,14 @@ const LayoutBase = ({children}) => {
                         <Col>
                             <FreelandoLogo />
                         </Col>
-                        <Col style={{ textAlign: 'right' }}>
-                            <Link>Login</Link>
+                        <Col style={{ textAlign: 'right', display: 'flex', gap: 14, justifyContent: 'flex-end', flexWrap: 'wrap' }}>
+                            <RouterLink style={{ color: 'white' }} to="/profissionais">Profissionais</RouterLink>
+                            <RouterLink style={{ color: 'white' }} to="/projetos">Projetos</RouterLink>
+                            {usuarioEstaLogado ? <>
+                                <RouterLink style={{ color: 'white' }} to="/dashboard">Painel</RouterLink>
+                                <RouterLink style={{ color: 'white' }} to="/area-logada/perfil">Perfil</RouterLink>
+                                <button onClick={logout}>Sair</button>
+                            </> : <RouterLink style={{ color: 'white' }} to="/login">Login</RouterLink>}
                         </Col>
                     </Row>
                 </Container>

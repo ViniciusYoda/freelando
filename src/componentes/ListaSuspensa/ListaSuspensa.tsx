@@ -14,7 +14,7 @@ const LabelEstilizada = styled.label`
 
 `
 
-const BotaoEstilizado = styled.button`
+const BotaoEstilizado = styled.button<{ estaAberta: boolean }>`
     cursor: pointer;
     display: block;
     height: 40px;
@@ -41,7 +41,7 @@ const BotaoEstilizado = styled.button`
 export const ListaSupensa = ({ titulo, opcoes, valor, onChange}) => {
     const [estaAberta, alternarVisibilidade] = useState(false)
 
-    const [opcaoFocada, setOpcaoFocada] = useState(null);
+    const [opcaoFocada, setOpcaoFocada] = useState<number | null>(null);
 
     const manipularTeclaDoTeclado = (evento) => {
         alternarVisibilidade(true)
